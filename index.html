@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaperSpatial</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" href="sidebar/L.Control.Sidebar.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+
+</head>
+<body>
+    <div class="header">
+        <div class="heading">
+            <div class="mainheading">
+                <h1>PaperSpatial</h1>
+            </div>
+            <div class="subheading">
+                <h2>Find the paper on globe</h2>
+            </div>
+        </div>
+        <div class="catagory">
+            <div class="goto">
+                <h3>Go Quick</h3>
+                <button id="io">Indian Ocean</button>
+                <button id="as">Arabian Sea</button>
+                <button id="bb">Bay of Bengal</button>
+                <button id="ar">Artic</button>
+                <button id="an">Antartic</button>
+                
+            </div>
+            <div class="subject">
+                <form>
+                        <p>Select based on Subject</p><br>
+                        <label><input type="checkbox" name="subject1" value="MarineBiology">Marine Biology</label>
+                        <label><input type="checkbox" name="subject1" value="MarineGeology">Marine Geology</label>
+                        <label><input type="checkbox" name="subject1" value="MarineChemistry">Marine Chemistry</label><br>
+                        <label><input type="checkbox" name="subject1" value="PolarScience">Polar Science</label>
+                        <label><input type="checkbox" name="subject1" value="abcd">abcd</label>
+                        <label><input type="checkbox" name="subject1" value="Others">Others</label>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="mymap">
+        <button id="addpaper" style="position: absolute; top: 10px;
+         left: 50px; z-index: 1000;">Add Your Research Here</button>
+     </div>
+
+
+
+
+
+
+
+
+
+
+    <div id="sidebar">
+        <h1>
+            Please fill the Informations
+        </h1>
+        <form id="uploadForm" enctype="multipart/form-data" method="post" action="upload.php">
+
+
+            <label for="author1">Author Name</label><br>
+            <input type = "text" id ="author1" name="author1" required />
+
+            <br><br>
+            <label for="authorall">Other Author if any</label><br>
+            <input type = "text" id ="authorall" name="authorall"/>
+
+            <br><br>
+            <label for="subjectdropdown">Subject Group</label><br>
+            <select id="subjectdropdown" name = "subjectdropdown">
+                <option value="Marine Biology">Marine Biology</option>
+                <option value="MarineGeology">Marine Geology</option>
+                <option value="MarineChemistry">Marine Chemistry</option>
+                <option value="PolarScience">Polar Science</option>
+                <option value="GeoPhysics">Geo Physics</option>
+                <option value="Others">Others</option>
+            </select>
+            <label for="othersubject" id = "othersubjectlabel" style="display: none;">Subject if you choose other </label>
+            <input type = "text" id ="othersubject" name="othersubject" style="display: none;"/>
+
+            <br><br>
+            <label for="title">Publisher Name</label><br>
+            <input type = "text" id ="publisher" name="publisher" required/>
+
+            <br><br>
+            <label for="title">Title of Publication</label><br>
+            <input type = "text" id ="title" name="title" required/>
+            
+            <br><br>
+            <label for="date">Date of Publication</label><br>
+            <input type = "date" id ="date" name="date" required/>
+
+            <br><br>
+            <label for="paperpdf">PDF of Publication. If any</label><br>
+            <input type="file" id="pdfpaper" name="pdfpaper" accept=".pdf">
+
+            <br><br>
+            <label for="paperlink">Publication link to your paper</label><br>
+            <input type="url" id="paperlink" name="paperlink" placeholder="Enter Link to Your Paper">
+
+
+            <br><br>
+            <p>Next you need to add .geojson format for the study area.<br>
+            Click below to convert shp to geojson format.
+
+            <button id="convert">Convert to Geojson</button>
+            </p>
+            
+
+
+
+
+
+
+
+            <br><br>
+            <label for="studyarea">Add your Study area geojson ()</label><br>
+            <input type="file" id="studyarea" name="studyarea" accept=".geojson" required>
+
+            <br><br>
+            <button id="submitpaper">Submit</button>
+        </form>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
+
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+ crossorigin=""></script>
+
+
+
+
+<script src="sidebar/L.Control.Sidebar.js"></script>
+
+
+<script src="viewchange.js"></script>
+
+
+
+
+
+
+<script src="basemaps.js"></script>
+<script src="script.js"></script>
+
+</html>
